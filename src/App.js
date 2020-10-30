@@ -1,7 +1,12 @@
+import Forms from './Forms';
 
 function App() {
   return (
-    null
+    <>
+      <Forms hardmode={false} />
+      <br/>
+      <Forms hardmode={true} />
+    </>
   );
 }
 
