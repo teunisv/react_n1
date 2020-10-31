@@ -24,8 +24,6 @@ export default class Forms extends Component {
             .map((a) => a.value)
     }
 
-
-
     handleInputChange(index, event) {
         var data = this.state.data.slice(); // Make a copy of the values first.
         data[index].value = event.target.value; // Update it with the modified value.
@@ -66,9 +64,7 @@ export default class Forms extends Component {
                 </div> 
                 <div className="SplitPane-right">
                     {this.state.data.map((p,index) => (
-                        hardmode 
-                            ? (<React.Fragment key={key++}>{p.text+p.value}<br/></React.Fragment>)
-                            : (<React.Fragment key={key++}><input type="text" id={p.id+"v"} value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>)                   
+                        <React.Fragment key={key++}><input type="text" id={(hardmode ? undefined : p.id+"v")} value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>                                    
                     ))}                    
                 </div>
             </div>
