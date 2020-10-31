@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import './Forms.css';
 
@@ -34,10 +34,12 @@ export default class Forms extends Component {
 
     render() {
         let hardmode = this.props.hardmode
+        let hardtext = hardmode ? "hard":"easy"
         let key = 0;
         return (
-            <div className="SplitPane">
-            <div className="SplitPane-50">
+            <div className="SplitPane" aria-labelledby={hardtext}>
+            <div className="SplitPane-50"  aria-labelledby={hardtext+"input"}>
+                <h4>{hardtext}input</h4>
                 <form>
                 <div className="SplitPane-left">
                     {this.state.data.map((p,index) => (
@@ -48,14 +50,13 @@ export default class Forms extends Component {
                 </div> 
                 <div className="SplitPane-right">
                     {this.state.data.map((p,index) => (
-                        hardmode 
-                            ? (<React.Fragment key={key++}><input type="text"/><br/></React.Fragment>)
-                            : (<React.Fragment key={key++}><input type="text" id={p.id} onChange={this.handleInputChange.bind(this, index)} value={p.value}/><br/></React.Fragment>)                   
+                        <React.Fragment key={key++}><input type="text" id={(hardmode ? undefined : p.id)} onChange={this.handleInputChange.bind(this, index)} value={p.value}/><br/></React.Fragment>                       
                     ))}
                 </div>
                 </form>
             </div>
-            <div className="SplitPane-50">    
+            <div className="SplitPane-50"   aria-labelledby={hardtext+"output"}>    
+                    <h4>{hardtext}output</h4>
                 <div className="SplitPane-left">
                     {this.state.data.map((p,index) => (
                         hardmode 
