@@ -1,28 +1,13 @@
 import React, { Component } from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import './Forms.css';
 
 export default class Forms extends Component {
-    ulabels = []
-
     constructor(props) {
         super(props)
 
-        this.ulabels = [
-            {id:uuidv4(), text:"a", value:"", sort:Math.random()},
-            {id:uuidv4(), text:"b", value:"", sort:Math.random()},
-            {id:uuidv4(), text:"c", value:"", sort:Math.random()},
-            {id:uuidv4(), text:"d", value:"", sort:Math.random()},
-            {id:uuidv4(), text:"e", value:"", sort:Math.random()}];
-        this.state = {data: this.randomize(this.ulabels)}
+        this.state = {data: this.props.ulabels}
     }
 
-    randomize(params) {
-        return params
-            .map((a) => ({sort: Math.random(), value: a}))
-            .sort((a, b) => a.sort - b.sort)
-            .map((a) => a.value)
-    }
 
     handleInputChange(index, event) {
         var data = this.state.data.slice(); // Make a copy of the values first.
