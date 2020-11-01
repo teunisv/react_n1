@@ -14,12 +14,15 @@
   
 .SplitPane-left {
     float: left;
-    width: 10%;
-    height: 100%;
+    width: 175px;
+    height: 50px;
+    text-align: right;
+    margin: 5px;
 }
 
 .SplitPane-right {
     float: left;
-    width: 90%;
-    height: 100%;
+    width: 175px;
+    height: 50px;    
+    margin: 5px;
 }

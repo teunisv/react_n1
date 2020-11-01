@@ -3,9 +3,13 @@ import Forms from './Forms';
 function App() {
   return (
     <>
-      <Forms hardmode={false} />
+      <Forms level={0} />
       <br/>
-      <Forms hardmode={true} />
+      <Forms level={1} />
+      <br/>
+      <Forms level={2} />      
+      <br/>
+      <Forms level={3} />
     </>
   );
 }
