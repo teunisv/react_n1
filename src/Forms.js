@@ -58,23 +58,23 @@ export default class Forms extends Component {
                             (hardmode === 0 && <React.Fragment key={key++}><label htmlFor={p.id+hardmode+"o"}>{p.text}<br/></label></React.Fragment>) ||
                             (hardmode === 1 && <React.Fragment key={key++}><>{p.text}<br/></></React.Fragment>) ||
                             (hardmode === 2 && (p.sort>=0.5
-                                ? <React.Fragment key={key++}><input type="text" id={p.id+hardmode+"o"} value={p.text+p.value} disabled="disabled"/><br/></React.Fragment> 
+                                ? <React.Fragment key={key++}><input type="text" id={p.id+hardmode+"o"} value={index+p.value} disabled="disabled"/><br/></React.Fragment> 
                                 : <React.Fragment key={key++}><label htmlFor={p.id+hardmode+"o"}>{p.text}<br/></label></React.Fragment>)) ||
                             (hardmode === 3 && (p.sort>=0.5
-                                ? <React.Fragment key={key++}><input type="text" value={p.text+p.value} disabled="disabled"/><br/></React.Fragment> 
+                                ? <React.Fragment key={key++}><input type="text" value={index+p.value} disabled="disabled"/><br/></React.Fragment> 
                                 : <React.Fragment key={key++}><>{p.text}<br/></></React.Fragment>))          
                     ))}                    
                 </div> 
                 <div className="SplitPane-right">
                     {this.state.data.map((p,index) => (
-                            (hardmode === 0 && <React.Fragment key={key++}><input type="text" id={p.id+"v"} value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>) ||
-                            (hardmode === 1 && <React.Fragment key={key++}><input type="text" value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>) ||
+                            (hardmode === 0 && <React.Fragment key={key++}><input type="text" id={p.id+"v"} value={index+p.value} disabled="disabled"/><br/></React.Fragment>) ||
+                            (hardmode === 1 && <React.Fragment key={key++}><input type="text" value={index+p.value} disabled="disabled"/><br/></React.Fragment>) ||
                             (hardmode === 2 && (p.sort>=0.5
                                 ? <React.Fragment key={key++}><label htmlFor={p.id+hardmode+"o"}>{p.text}<br/></label></React.Fragment>
-                                : <React.Fragment key={key++}><input type="text" id={p.id+hardmode+"o"} value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>)) ||                            
+                                : <React.Fragment key={key++}><input type="text" id={p.id+hardmode+"o"} value={index+p.value} disabled="disabled"/><br/></React.Fragment>)) ||                            
                             (hardmode === 3 && (p.sort>=0.5
                                 ? <React.Fragment key={key++}><>{p.text}<br/></></React.Fragment>
-                                : <React.Fragment key={key++}><input type="text" value={p.text+p.value} disabled="disabled"/><br/></React.Fragment>))  
+                                : <React.Fragment key={key++}><input type="text" value={index+p.value} disabled="disabled"/><br/></React.Fragment>))  
                     ))}                    
                 </div>
             </div>
