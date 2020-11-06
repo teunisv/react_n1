@@ -20,8 +20,8 @@ export default class Forms extends Component {
         let hardtext = "L" + hardmode
         let key = 0;
         return (
-            <div className="SplitPane" aria-labelledby={hardtext}>
-            <div className="SplitPane-50"  aria-labelledby={hardtext+"input"}>
+            <div className="SplitPane" aria-label={hardtext}>
+            <div className="SplitPane-50"  aria-label={hardtext+"input"}>
                 <h4>{hardtext}input</h4>
                 <form>
                 <div className="SplitPane-left">
@@ -51,7 +51,7 @@ export default class Forms extends Component {
                 </div>
                 </form>
             </div>
-            <div className="SplitPane-50"   aria-labelledby={hardtext+"output"}>    
+            <div className="SplitPane-50"   aria-label={hardtext+"output"}>    
                     <h4>{hardtext}output</h4>
                 <div className="SplitPane-left">
                     {this.state.data.map((p,index) => ( 
